@@ -153,26 +153,8 @@ function processMessage(event) {
 			} else if (formattedMsg.contains("legal")) {
 				sendMessage(senderId, {text: "Ok cool. Let me have a look."});
 			}
-
-    /*  switch (formattedMsg) {
-				case "yenni": sendMessage(senderId, {text: "How can I help?"})
-				break;
-				case "think": sendMessage(senderId, {text: "Based on what you studied, I think you would be interested in a design career"});
-				break;*/
-      /*  case "plot":
-        case "date":
-        case "runtime":
-        case "director":
-        case "cast":
-        case "rating":
-          getMovieDetail(senderId, formattedMsg);
-          break;
-
-        default:
-          findMovie(senderId, formattedMsg);*/
       }
     } else if (message.attachments) {
       sendMessage(senderId, {text: "Sorry, I don't understand your request."});
     }
   }
-}
