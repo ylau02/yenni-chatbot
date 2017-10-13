@@ -36,7 +36,7 @@ app.post("/webhook", function (req, res) {
     req.body.entry.forEach(function(entry) {
 			console.log("test2");
       // Iterate over each messaging event
-      entry.messaging.forEach(function(event) {
+    //  entry.messaging.forEach(function(event) {
 				//var senderId = event.sender.id;
 				//var payload = event.postback.payload;
 				//sendMessage(senderId, {text: "hi back"});
@@ -47,7 +47,7 @@ app.post("/webhook", function (req, res) {
         } else if (event.message){
 					processMessage(event);
 				}*/
-				}
+			//	}
       });
     })
     res.sendStatus(200);
@@ -101,7 +101,7 @@ function sendMessage(recipientId, message) {
     }
   });
 }
-/*
+
 function processMessage(event) {
   if (!event.message.is_echo) {
     var message = event.message;
@@ -132,9 +132,9 @@ function processMessage(event) {
 
         default:
           findMovie(senderId, formattedMsg);*/
-    /*  }
+      }
     } else if (message.attachments) {
       sendMessage(senderId, {text: "Sorry, I don't understand your request."});
     }
   }
-}*/
+}
