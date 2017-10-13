@@ -53,9 +53,7 @@ function processPostback(event) {
     request({
       url: "https://graph.facebook.com/v2.6/" + senderId,
       qs: {
-        access_token: "EAACU0onlW0oBAJVqZAFdp4rnzJWVF26RJveCWtCxdAHtDg7ZBgHSh8DfMF3xFVlQ97Xzd5k1gO6qcoTliThY53S5IDjYgedDxeOzrtVVITasjYZAq1j20Hr8YxQlUke48DggkM0HgwzAX06Sk4xZCEMVxsQwIdSZCZCFHyUiq2AwZDZD
-",
-				//process.env.PAGE_ACCESS_TOKEN"",
+        access_token: process.env.PAGE_ACCESS_TOKEN,
         fields: "first_name"
       },
       method: "GET"
