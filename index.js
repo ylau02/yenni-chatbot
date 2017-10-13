@@ -39,12 +39,12 @@ app.post("/webhook", function (req, res) {
 				//var payload = event.postback.payload;
 				//sendMessage(senderId, {text: "hi back"});
 				//console.log("dskfskndskfnds");
-        if (event.postback) {
+      /*  if (event.postback) {
           processPostback(event);
 					console.log("test");
         } else if (event.message){
 					processMessage(event);
-				}
+				}*/
 				}
       });
     })
