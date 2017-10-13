@@ -256,10 +256,11 @@ function processMessage(event) {
 			if(formattedMsg.includes("yenni")){
 				sendMessage(senderId, {text: "How can I help?"});
 			} else if (formattedMsg.includes("uni") || formattedMsg.includes("think")) {
+				sendMessage(senderId, {text: "Based on your academics, past experiences and interests, would you like to try out accounting? Here's some job openings"})
+				sendURL(senderId);
 				//sendMessage(senderId, {text: "How did you do on your exams?"});
 			} else if (formattedMsg.includes("maths")) {
-				sendMessage(senderId, {text: "Based on your academics, past experiences and interests, would you like to try out Accounting? Here's some job openings"})
-				sendURL(senderId);
+
 				//sendMessage(senderId, {text: "Ok cool. Let me have a look."});
 				//sendMessage(senderId, {text: "Here are some options based on your grades: Data Analyst, Statistician, Accountant"});
 				//sendMessage(senderId, {text: "Here are some options based on your interests: Photographer, Graphic Designer, Comic Book Artist, Traveller, Accountant"});
