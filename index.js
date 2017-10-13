@@ -35,15 +35,17 @@ app.post("/webhook", function (req, res) {
 			console.log("test2");
       // Iterate over each messaging event
       entry.messaging.forEach(function(event) {
-				var senderId = event.sender.id;
+				//var senderId = event.sender.id;
 				//var payload = event.postback.payload;
-				sendMessage(senderId, {text: "hi back"});
-				console.log("dskfskndskfnds");
-        /*if (event.postback) {
-          //processPostback(event);
+				//sendMessage(senderId, {text: "hi back"});
+				//console.log("dskfskndskfnds");
+        if (event.postback) {
+          processPostback(event);
 					console.log("test");
-
-        }*/
+        } else if (event.message){
+					processMessage(event);
+				}
+				}
       });
     })
     res.sendStatus(200);
@@ -96,4 +98,41 @@ function sendMessage(recipientId, message) {
       console.log("Error sending message: " + response.error);
     }
   });
+}
+
+function processMessage(event) {
+  if (!event.message.is_echo) {
+    var message = event.message;
+    var senderId = event.sender.id;
+
+    console.log("Received message from senderId: " + senderId);
+    console.log("Message is: " + JSON.stringify(message));
+
+    // You may get a text or attachment but not both
+    if (message.text) {
+      var formattedMsg = message.text.toLowerCase().trim();
+
+      // If we receive a text message, check to see if it matches any special
+      // keywords and send back the corresponding movie detail.
+      // Otherwise, search for new movie.
+      switch (formattedMsg) {
+				case "hi": sendMessage(senderId, {text: "sdf."});
+
+					break;
+      /*  case "plot":
+        case "date":
+        case "runtime":
+        case "director":
+        case "cast":
+        case "rating":
+          getMovieDetail(senderId, formattedMsg);
+          break;
+
+        default:
+          findMovie(senderId, formattedMsg);*/
+      }
+    } else if (message.attachments) {
+      sendMessage(senderId, {text: "Sorry, I don't understand your request."});
+    }
+  }
 }
