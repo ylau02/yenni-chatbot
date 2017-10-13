@@ -42,6 +42,8 @@ app.post("/webhook", function (req, res) {
         }
       });
     });
+		var senderId = event.sender.id;
+		var payload = event.postback.payload;
 		sendMessage(senderId, {text: "hi back"});
     res.sendStatus(200);
 		console.log("test3");
