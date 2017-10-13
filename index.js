@@ -14,8 +14,6 @@ app.get("/", function (req, res) {
 
 // Facebook Webhook
 // Used for verification
-
-
 app.get("/webhook", function (req, res) {
   if (req.query["hub.verify_token"] === "team-zzzz") {
     console.log("Verified webhook");
@@ -27,7 +25,7 @@ app.get("/webhook", function (req, res) {
 });
 
 // All callbacks for Messenger will be POST-ed here
-app.post("/webhook", function (req, res) {
+/*app.post("/webhook", function (req, res) {
   // Make sure this is a page subscription
   if (req.body.object == "page") {
 		console.log("test1");
@@ -36,24 +34,46 @@ app.post("/webhook", function (req, res) {
     req.body.entry.forEach(function(entry) {
 			console.log("test2");
       // Iterate over each messaging event
-    //  entry.messaging.forEach(function(event) {
+      entry.messaging.forEach(function(event) {
 				//var senderId = event.sender.id;
 				//var payload = event.postback.payload;
 				//sendMessage(senderId, {text: "hi back"});
 				//console.log("dskfskndskfnds");
-      /*  if (event.postback) {
+        if (event.postback) {
           processPostback(event);
 					console.log("test");
-        } else if (event.message){
+        } else if (event.message) {
 					processMessage(event);
-				}*/
-			//	}
+				}
+				}
       });
     })
     res.sendStatus(200);
 		console.log("test3");
   }
 	console.log('test4');
+});*/
+
+
+// All callbacks for Messenger will be POST-ed here
+app.post("/webhook", function (req, res) {
+  // Make sure this is a page subscription
+  if (req.body.object == "page") {
+    // Iterate over each entry
+    // There may be multiple entries if batched
+    req.body.entry.forEach(function(entry) {
+      // Iterate over each messaging event
+      entry.messaging.forEach(function(event) {
+        if (event.postback) {
+          processPostback(event);
+        } else if (event.message) {
+          processMessage(event);
+        }
+      });
+    });
+
+    res.sendStatus(200);
+  }
 });
 
 function processPostback(event) {
@@ -118,7 +138,7 @@ function processMessage(event) {
       // keywords and send back the corresponding movie detail.
       // Otherwise, search for new movie.
       switch (formattedMsg) {
-				case "hi": sendMessage(senderId, {text: "sdf."});
+				case "hi": sendMessage(senderId, {text: "Sorry, I don't understand your request."});
 
 					break;
       /*  case "plot":
