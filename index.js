@@ -12,6 +12,8 @@ app.get("/", function (req, res) {
   res.send("Deployed!");
 });
 
+console.log('dklsfkndsknf');
+
 // Facebook Webhook
 // Used for verification
 app.get("/webhook", function (req, res) {
@@ -47,7 +49,6 @@ function processPostback(event) {
   var senderId = event.sender.id;
   var payload = event.postback.payload;
 	console.log(senderId);
-	console.log("payload");
   if (payload === "Greeting") {
     // Get user's first name from the User Profile API
     // and include it in the greeting
