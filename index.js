@@ -38,6 +38,7 @@ app.post("/webhook", function (req, res) {
 				var senderId = event.sender.id;
 				//var payload = event.postback.payload;
 				sendMessage(senderId, {text: "hi back"});
+				console.log("dskfskndskfnds");
         /*if (event.postback) {
           //processPostback(event);
 					console.log("test");
