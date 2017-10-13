@@ -143,7 +143,7 @@ function sendURL(recipientId){
     method: "POST",
     json: {
       recipient: {id: recipientId},
-      message:     message: {
+      message: {
 			      attachment: {
 			        type: "template",
 			        payload: {
