@@ -147,7 +147,8 @@ function processMessage(event) {
       // keywords and send back the corresponding movie detail.
       // Otherwise, search for new movie.
       switch (formattedMsg) {
-				case "hi": sendMessage(senderId, {text: "Sorry, I don't understand your request."});
+				case "yenni": sendMessage(senderId, {text: "How can I help?"});
+				case "think": sendMessage(senderId, {text: "Based on what you studied, I think you would be interested in a design career"});
 
 					break;
       /*  case "plot":
