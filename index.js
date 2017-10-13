@@ -149,12 +149,12 @@ function processMessage(event) {
 			if(formattedMsg.includes("yenni")){
 				sendMessage(senderId, {text: "How can I help?"});
 			} else if (formattedMsg.includes("uni") || formattedMsg.includes("think")) {
-				sendMessage(senderId, {text: "How did you do on your exams"});
+				sendMessage(senderId, {text: "How did you do on your exams?"});
 			} else if (formattedMsg.includes("maths")) {
 				sendMessage(senderId, {text: "Ok cool. Let me have a look."});
 				sendMessage(senderId, {text: "Here are some options based on your grades: Data Analyst, Statistician, Accountant"});
 				sendMessage(senderId, {text: "Here are some options based on your interests: Photographer, Graphic Designer, Comic Book Artist, Traveller, Accountant"});
-			} else if (formattedMsg.includes("Accountant")) {
+			} else if (formattedMsg.includes("accountant")) {
 				sendMessage(senderId, {text: "An accountant is a professional person who performs accounting functions such as audits or financial statement analysis. Accountants can either be employed with an accounting firm, a large company with an internal accounting department, or can set up an individual practice. Accountants are given certifications by national professional associations, after meeting state-specific requirements, although non-qualified persons can still work under other accountants, or independently.\
 				The benefits of being an Accountant are: potential for flexible working, travel, utilises your strengths in maths\
 				The transferable skills you will gain from being an Accountant are: time management, project management, communication skills\
