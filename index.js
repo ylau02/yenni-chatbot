@@ -12,6 +12,13 @@ app.get("/", function (req, res) {
   res.send("Deployed!");
 });
 
+
+//init
+var Glassdoor = require('node-glassdoor').initGlassdoor({
+    partnerId: 208235,
+    partnerKey: "cZU1Vm4x2ls"
+});
+
 // Facebook Webhook
 // Used for verification
 app.get("/webhook", function (req, res) {
@@ -128,6 +135,106 @@ function sendMessage(recipientId, message) {
   });
 }
 
+
+function sendURL(recipientId){
+	request({
+    url: "https://graph.facebook.com/v2.6/me/messages",
+    qs: {access_token: process.env.PAGE_ACCESS_TOKEN},
+    method: "POST",
+    json: {
+      recipient: {id: recipientId},
+      message:     message: {
+			      attachment: {
+			        type: "template",
+			        payload: {
+			          template_type: "generic",
+			          elements: [{
+			            title: "rift",
+			            subtitle: "Next-generation virtual reality",
+			            item_url: "https://www.oculus.com/en-us/rift/",
+			            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+			            buttons: [{
+			              type: "web_url",
+			              url: "https://www.oculus.com/en-us/rift/",
+			              title: "Open Web URL"
+			            }, {
+			              type: "postback",
+			              title: "Call Postback",
+			              payload: "Payload for first bubble",
+			            }],
+			          }, {
+			            title: "touch",
+			            subtitle: "Your Hands, Now in VR",
+			            item_url: "https://www.oculus.com/en-us/touch/",
+			            image_url: "http://messengerdemo.parseapp.com/img/touch.png",
+			            buttons: [{
+			              type: "web_url",
+			              url: "https://www.oculus.com/en-us/touch/",
+			              title: "Open Web URL"
+			            }, {
+			              type: "postback",
+			              title: "Call Postback",
+			              payload: "Payload for second bubble",
+			            }]
+			          }]
+			        }
+			      }
+			    }
+    }
+  }, function(error, response, body) {
+    if (error) {
+      console.log("Error sending message: " + response.error);
+    }
+  });
+}
+
+/*function sendGenericMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "rift",
+            subtitle: "Next-generation virtual reality",
+            item_url: "https://www.oculus.com/en-us/rift/",
+            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            buttons: [{
+              type: "web_url",
+              url: "https://www.oculus.com/en-us/rift/",
+              title: "Open Web URL"
+            }, {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for first bubble",
+            }],
+          }, {
+            title: "touch",
+            subtitle: "Your Hands, Now in VR",
+            item_url: "https://www.oculus.com/en-us/touch/",
+            image_url: "http://messengerdemo.parseapp.com/img/touch.png",
+            buttons: [{
+              type: "web_url",
+              url: "https://www.oculus.com/en-us/touch/",
+              title: "Open Web URL"
+            }, {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for second bubble",
+            }]
+          }]
+        }
+      }
+    }
+  };
+
+  callSendAPI(messageData);
+}*/
+
 function processMessage(event) {
 	console.log("here");
 	console.log(event.message);
@@ -161,9 +268,9 @@ function processMessage(event) {
 				sendMessage(senderId, {text: "The transferable skills you will gain from being an Accountant are: time management, project management, communication skills. You currently have skills in: commnication, mathematics and tax legislation"});
 
 				//sendMessage(senderId, {text: "So what do you think?"});
-			} else if (formattedMsg.includes("Thanks")) {
-				sendMessage(senderId, {text: "Happy to help."});
-
+			} else if (formattedMsg.includes("companies")) {
+				//sendMessage(senderId, {text: "Happy to help."});
+				sendURL(senderId);
 			}
       }
     } else if (message.attachments) {
