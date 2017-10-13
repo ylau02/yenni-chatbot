@@ -146,11 +146,11 @@ function processMessage(event) {
       // If we receive a text message, check to see if it matches any special
       // keywords and send back the corresponding movie detail.
       // Otherwise, search for new movie.
-			if(formattedMsg.contains("yenni")){
+			if(formattedMsg.toString().contains("yenni")){
 				sendMessage(senderId, {text: "How can I help?"});
-			} else if (formattedMsg.contains("uni") || formattedMsg.contains("think")) {
+			} else if (formattedMsg.toString().contains("uni") || formattedMsg.contains("think")) {
 				sendMessage(senderId, {text: "How did you do on your exams"});
-			} else if (formattedMsg.contains("legal")) {
+			} else if (formattedMsg.toString().contains("legal")) {
 				sendMessage(senderId, {text: "Ok cool. Let me have a look."});
 			}
       }
