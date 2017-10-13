@@ -149,9 +149,9 @@ function processMessage(event) {
 			if(formattedMsg.contains("yenni")){
 				sendMessage(senderId, {text: "How can I help?"});
 			} else if (formattedMsg.contains("uni") || formattedMsg.contains("think")) {
-				sendMessage(senderId, {"How did you do on your exams?"});
+				sendMessage(senderId, {text: "How did you do on your exams"});
 			} else if (formattedMsg.contains("legal")) {
-				sendMessage(senderId, {"Ok cool. Let me have a look."});
+				sendMessage(senderId, {text: "Ok cool. Let me have a look."});
 			}
 
     /*  switch (formattedMsg) {
