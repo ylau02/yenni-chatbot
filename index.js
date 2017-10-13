@@ -130,7 +130,7 @@ function sendMessage(recipientId, message) {
 
 function processMessage(event) {
 	console.log("here");
-	console.log("event.message");
+	console.log(event.message);
   if (!event.message.is_echo) {
     var message = event.message;
     var senderId = event.sender.id;
