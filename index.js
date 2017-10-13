@@ -58,20 +58,26 @@ app.get("/webhook", function (req, res) {
 // All callbacks for Messenger will be POST-ed here
 app.post("/webhook", function (req, res) {
   // Make sure this is a page subscription
+	console.log("hi");
   if (req.body.object == "page") {
+		console.log("hey");
     // Iterate over each entry
     // There may be multiple entries if batched
     req.body.entry.forEach(function(entry) {
+			console.log("hiho");
       // Iterate over each messaging event
       entry.messaging.forEach(function(event) {
+				console.log("watsup");
         if (event.postback) {
+					console.log("bye");
           processPostback(event);
         } else if (event.message) {
+					console.log("hihi");
           processMessage(event);
         }
       });
     });
-
+		console.log("byebye");
     res.sendStatus(200);
   }
 });
