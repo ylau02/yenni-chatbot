@@ -143,39 +143,39 @@ function sendURL(recipientId){
     method: "POST",
     json: {
       recipient: {id: recipientId},
-      message: {
+      	message: {
 			      attachment: {
 			        type: "template",
 			        payload: {
 			          template_type: "generic",
 			          elements: [{
-			            title: "rift",
-			            subtitle: "Next-generation virtual reality",
-			            item_url: "https://www.oculus.com/en-us/rift/",
-			            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+			            title: "Deloitte",
+			            subtitle: "Dedicated professionals in independent firms throughout the world collaborate to provide audit, consulting, financial advisory, risk advisory, tax",
+			            item_url: "https://www2.deloitte.com/au/en/careers/students.html?icid=top_students",
+			            image_url: "https://www2.deloitte.com/au/en.html",
 			            buttons: [{
 			              type: "web_url",
-			              url: "https://www.oculus.com/en-us/rift/",
-			              title: "Open Web URL"
-			            }, {
+			              url: "https://www2.deloitte.com/au/en/careers/students.html?icid=top_students",
+			              title: "Check it out"
+			            }/*, {
 			              type: "postback",
 			              title: "Call Postback",
 			              payload: "Payload for first bubble",
-			            }],
+			            }]*/,
 			          }, {
-			            title: "touch",
-			            subtitle: "Your Hands, Now in VR",
-			            item_url: "https://www.oculus.com/en-us/touch/",
-			            image_url: "http://messengerdemo.parseapp.com/img/touch.png",
+			            title: "Commonwealth Bank",
+			            subtitle: "Start at the forefront",
+			            item_url: "https://www.commbank.com.au/about-us/careers/graduate-recruitment-program.html",
+			            image_url: "https://www.commbank.com.au/etc/designs/commbank/branding/images/cba-logo.png",
 			            buttons: [{
 			              type: "web_url",
-			              url: "https://www.oculus.com/en-us/touch/",
-			              title: "Open Web URL"
-			            }, {
+			              url: "https://www.commbank.com.au/about-us/careers/graduate-recruitment-program.html",
+			              title: "Check it out"
+			            }/*, {
 			              type: "postback",
 			              title: "Call Postback",
 			              payload: "Payload for second bubble",
-			            }]
+			            }*/]
 			          }]
 			        }
 			      }
