@@ -156,10 +156,10 @@ function sendURL(recipientId){
 			            buttons: [{
 			              type: "web_url",
 			              url: "https://www2.deloitte.com/au/en/careers/students.html?icid=top_students",
-			              title: "Check out the company"
+			              title: "Company"
 			            }, {
 			              type: "postback",
-			              title: "Check out the opening",
+			              title: "Job Opening",
 			              payload: "Payload for first bubble",
 			            }],
 			          }, {
@@ -170,10 +170,10 @@ function sendURL(recipientId){
 			            buttons: [{
 			              type: "web_url",
 			              url: "https://www.commbank.com.au/about-us/careers/graduate-recruitment-program.html",
-			              title: "Check it out"
+			              title: "Company"
 			            }, {
 			              type: "postback",
-			              title: "Check out the opening",
+			              title: "Job Opening",
 			              payload: "Payload for second bubble",
 			            }]
 			          }]
