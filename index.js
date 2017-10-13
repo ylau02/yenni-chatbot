@@ -38,10 +38,11 @@ app.post("/webhook", function (req, res) {
         if (event.postback) {
           //processPostback(event);
 					console.log("test");
-					sendMessage(senderId, {text: "hi back"});
+
         }
       });
     });
+		sendMessage(senderId, {text: "hi back"});
     res.sendStatus(200);
 		console.log("test3");
   }
