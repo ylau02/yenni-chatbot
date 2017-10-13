@@ -146,11 +146,21 @@ function processMessage(event) {
       // If we receive a text message, check to see if it matches any special
       // keywords and send back the corresponding movie detail.
       // Otherwise, search for new movie.
-      switch (formattedMsg) {
+			if(formattedMsg.contains("yenni")){
+				sendMessage(senderId, {text: "How can I help?"});
+			} else if (formattedMsg.contains("uni") or formattedMsg.contains("think")) {
+				sendMessage(senderId, {"How did you do on your exams?"});
+			} else if (formattedMsg.contains("legal")) {
+				sendMessage(senderId, {"Ok cool. Let me have a look."});
+			}{
+
+			}
+
+    /*  switch (formattedMsg) {
 				case "yenni": sendMessage(senderId, {text: "How can I help?"})
 				break;
 				case "think": sendMessage(senderId, {text: "Based on what you studied, I think you would be interested in a design career"});
-				break;
+				break;*/
       /*  case "plot":
         case "date":
         case "runtime":
