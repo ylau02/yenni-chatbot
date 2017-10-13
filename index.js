@@ -161,7 +161,7 @@ function sendURL(recipientId){
 			              type: "postback",
 			              title: "Call Postback",
 			              payload: "Payload for first bubble",
-			            }],*/
+			            }*/],
 			          }, {
 			            title: "Commonwealth Bank",
 			            subtitle: "Start at the forefront",
