@@ -148,7 +148,7 @@ function processMessage(event) {
       // Otherwise, search for new movie.
 			if(formattedMsg.contains("yenni")){
 				sendMessage(senderId, {text: "How can I help?"});
-			} else if (formattedMsg.contains("uni") or formattedMsg.contains("think")) {
+			} else if (formattedMsg.contains("uni") || formattedMsg.contains("think")) {
 				sendMessage(senderId, {"How did you do on your exams?"});
 			} else if (formattedMsg.contains("legal")) {
 				sendMessage(senderId, {"Ok cool. Let me have a look."});
