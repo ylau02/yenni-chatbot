@@ -156,12 +156,12 @@ function sendURL(recipientId){
 			            buttons: [{
 			              type: "web_url",
 			              url: "https://www2.deloitte.com/au/en/careers/students.html?icid=top_students",
-			              title: "Check it out"
-			            }/*, {
+			              title: "Check out the company"
+			            }, {
 			              type: "postback",
-			              title: "Call Postback",
+			              title: "Check out the opening",
 			              payload: "Payload for first bubble",
-			            }*/],
+			            }],
 			          }, {
 			            title: "Commonwealth Bank",
 			            subtitle: "Start at the forefront",
@@ -171,11 +171,11 @@ function sendURL(recipientId){
 			              type: "web_url",
 			              url: "https://www.commbank.com.au/about-us/careers/graduate-recruitment-program.html",
 			              title: "Check it out"
-			            }/*, {
+			            }, {
 			              type: "postback",
-			              title: "Call Postback",
+			              title: "Check out the opening",
 			              payload: "Payload for second bubble",
-			            }*/]
+			            }]
 			          }]
 			        }
 			      }
