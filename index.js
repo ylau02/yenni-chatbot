@@ -36,7 +36,7 @@ app.post("/webhook", function (req, res) {
       // Iterate over each messaging event
       entry.messaging.forEach(function(event) {
 				var senderId = event.sender.id;
-				var payload = event.postback.payload;
+				//var payload = event.postback.payload;
 				sendMessage(senderId, {text: "hi back"});
         /*if (event.postback) {
           //processPostback(event);
@@ -45,7 +45,6 @@ app.post("/webhook", function (req, res) {
         }*/
       });
     })
-
     res.sendStatus(200);
 		console.log("test3");
   }
