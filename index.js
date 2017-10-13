@@ -155,7 +155,11 @@ function processMessage(event) {
 				sendMessage(senderId, {text: "Here are some options based on your grades: Data Analyst, Statistician, Accountant"});
 				sendMessage(senderId, {text: "Here are some options based on your interests: Photographer, Graphic Designer, Comic Book Artist, Traveller, Accountant"});
 			} else if (formattedMsg.includes("accountant")) {
-				sendMessage(senderId, {text: "An accountant is a professional person who performs accounting functions such as audits or financial statement analysis. Accountants can either be employed with an accounting firm, a large company with an internal accounting department, or can set up an individual practice. Accountants are given certifications by national professional associations, after meeting state-specific requirements, although non-qualified persons can still work under other accountants, or independently. The benefits of being an Accountant are: potential for flexible working, travel, utilises your strengths in maths.	The transferable skills you will gain from being an Accountant are: time management, project management, communication skills. You currently have skills in: commnication, mathematics and tax legislation"});
+				sendMessage(senderId, {text: "An accountant is a professional person who performs accounting functions such as audits or financial statement analysis."});
+				sendMessage(senderId, {text: "Accountants are given certifications by national professional associations, after meeting state-specific requirements, although non-qualified persons can still work under other accountants, or independently."});
+				sendMessage(senderId, {text: "The benefits of being an Accountant are: potential for flexible working, travel, utilises your strengths in maths."});
+				sendMessage(senderId, {text: "The transferable skills you will gain from being an Accountant are: time management, project management, communication skills. You currently have skills in: commnication, mathematics and tax legislation"});
+
 				//sendMessage(senderId, {text: "So what do you think?"});
 			} else if (formattedMsg.includes("Thanks")) {
 				sendMessage(senderId, {text: "Happy to help."});
