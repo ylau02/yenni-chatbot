@@ -14,6 +14,8 @@ app.get("/", function (req, res) {
 
 // Facebook Webhook
 // Used for verification
+
+
 app.get("/webhook", function (req, res) {
   if (req.query["hub.verify_token"] === "team-zzzz") {
     console.log("Verified webhook");
@@ -99,7 +101,7 @@ function sendMessage(recipientId, message) {
     }
   });
 }
-
+/*
 function processMessage(event) {
   if (!event.message.is_echo) {
     var message = event.message;
@@ -130,9 +132,9 @@ function processMessage(event) {
 
         default:
           findMovie(senderId, formattedMsg);*/
-      }
+    /*  }
     } else if (message.attachments) {
       sendMessage(senderId, {text: "Sorry, I don't understand your request."});
     }
   }
-}
+}*/
