@@ -12,8 +12,6 @@ app.get("/", function (req, res) {
   res.send("Deployed!");
 });
 
-console.log('dklsfkndsknf');
-
 // Facebook Webhook
 // Used for verification
 app.get("/webhook", function (req, res) {
@@ -24,6 +22,7 @@ app.get("/webhook", function (req, res) {
     console.error("Verification failed. The tokens do not match.");
     res.sendStatus(403);
   }
+	console.log('dklsfkndsknf');
 });
 
 // All callbacks for Messenger will be POST-ed here
