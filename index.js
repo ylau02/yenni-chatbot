@@ -152,8 +152,6 @@ function processMessage(event) {
 				sendMessage(senderId, {"How did you do on your exams?"});
 			} else if (formattedMsg.contains("legal")) {
 				sendMessage(senderId, {"Ok cool. Let me have a look."});
-			}{
-
 			}
 
     /*  switch (formattedMsg) {
