@@ -1,18 +1,6 @@
-# 🤖 Creating your own Facebook Messenger bot
+# Yenni the Chatbot
+This prototype chatbot demo was created as part of the 2017 Sydney Women in IT Hackathon.
 
-![Alt text](/demo/Demo.gif)
-
-Facebook recently opened up their Messenger platform to enable bots to converse with users through Facebook Apps and on Facebook Pages. 
-
-You can read the  [documentation](https://developers.facebook.com/docs/messenger-platform/quickstart) the Messenger team prepared but it's not very clear for beginners and intermediate hackers. 
-
-So instead here is how to create your own messenger bot in 15 minutes.
-
-## 🙌 Get set
-
-Messenger bots uses a web server to process messages it receives or to figure out what messages to send. You also need to have the bot be authenticated to speak with the web server and the bot approved by Facebook to speak with the public.
-
-You can also skip the whole thing by git cloning this repository, running npm install, and run a server somewhere.
 
 ### *Build the server*
 
@@ -330,6 +318,3 @@ Read about all things chat bots with the ChatBots Magazine [here](https://medium
 
 You can also design Messenger bots in Sketch with the [Bots UI Kit](https://bots.mockuuups.com)!
 
-## How I can help
-
-I build and design bots all day. Email me for help!
